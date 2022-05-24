@@ -5,15 +5,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import javax.annotation.PostConstruct;
+
 @SpringBootApplication
 public class Ejercicio7CicloDeVidaDeBeansApplication {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(Ejercicio7CicloDeVidaDeBeansApplication.class, args);
-
 	}
 
+	@Bean
+	CommandLineRunner ejecutate(){
+		return p -> System.out.println("Línea a ejecutar cuando se haya instanciado esta clase");
+	}
 }
 
 
